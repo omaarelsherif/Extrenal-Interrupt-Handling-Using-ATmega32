@@ -11,7 +11,7 @@
 
 #include "STD_TYPES.h"
 
-// Degine macros to registers addreses
+// Macros to define registers addreses
 #define MCUCR    *((volatile u8 *) 0x55)
 #define MCUCRR   *((volatile u8 *) 0x54)
 #define GICR     *((volatile u8 *) 0x5B)
