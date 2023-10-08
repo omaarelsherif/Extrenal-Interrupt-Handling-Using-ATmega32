@@ -7,11 +7,11 @@
 */
 
 // Include header files
-#include "STD_TYPES.h"
-#include "BIT_MATH.h"
+#include "../LIB/STD_TYPES.h"
+#include "../LIB/BIT_MATH.h"
+#include "DIO_Interface.h"
 #include "EXTI_Register.h"
 #include "EXTI_Config.h"
-#include "DIO_Interface.h"
 
 // Function to initialize the external interrupt
 void EXTI_VoidInit(void)
@@ -55,14 +55,14 @@ void EXTI_VoidEnableGIE(void)
 void EXTI_VoidDisableGIE(void)
 {
 	// Enable GIE
-	CLR_BIT(SREG, 7);
+	CLR_BIT(SREG, PIN7);
 }
 
 // INT0 ISR
 void __vector_1(void)
 {
     // INT Body
-    DIO_VoidSetPinValue(2, 0, 1);
+    DIO_VoidSetPinValue(PORT_C, PIN0, HIGH);
 }
 
 

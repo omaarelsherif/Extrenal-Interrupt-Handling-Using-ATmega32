@@ -9,7 +9,7 @@
 #ifndef EXTI_PRIVATE_H
 #define EXTI_PRIVATE_H
 
-#include "STD_TYPES.h"
+#include "../LIB/STD_TYPES.h"
 
 // Macros to define registers addreses
 #define MCUCR    *((volatile u8 *) 0x55)

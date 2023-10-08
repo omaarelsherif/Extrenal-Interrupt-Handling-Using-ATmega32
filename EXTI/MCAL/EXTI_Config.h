@@ -9,6 +9,9 @@
 #ifndef EXTI_CONFIG_H
 #define EXTI_CONFIG_H
 
+// Include DIO configurations
+#include "DIO_Config.h"
+
 // Macros to define ISC modes
 #define FALLING		0
 #define RAISING		1

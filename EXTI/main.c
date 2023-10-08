@@ -4,8 +4,9 @@
  */
 
 // Include drivers
-#include "DIO_Interface.h"
-#include "EXTI_Interface.h"
+#include "MCAL/DIO_Config.h"
+#include "MCAL/DIO_Interface.h"
+#include "MCAL/EXTI_Interface.h"
 
 // Main function
 void main(void)
@@ -17,11 +18,11 @@ void main(void)
 	EXTI_VoidInit();
 
 	// Set INT0 pin as input and activate internal pull up resistance for INT0 at portd pin2
-	DIO_VoidSetPinDirection(3, 2, 0);
-	DIO_VoidSetPinValue(3, 2, 1);
+	DIO_VoidSetPinDirection(PORT_D, PIN2, INPUT);
+	DIO_VoidSetPinValue(PORT_D, PIN2, HIGH);
 
 	// Set DDR fro pin0 of portc as output to target a led
-	DIO_VoidSetPinDirection(2, 0, 1);
+	DIO_VoidSetPinDirection(PORT_C, PIN0, OUTPUT);
 
 	// Program loop
 	while(1)
