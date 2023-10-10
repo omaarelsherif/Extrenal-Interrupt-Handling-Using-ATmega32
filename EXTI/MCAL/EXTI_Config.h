@@ -23,8 +23,8 @@
 // Macros to define ISC bits to set ISC mode for INT0, INT1
 #define ISC00	0
 #define ISC01	1
-#define ISC00	2
-#define ISC01	3
+#define ISC10	2
+#define ISC11	3
 
 // Macros to define enable & disable
 #define DISABLE  0
