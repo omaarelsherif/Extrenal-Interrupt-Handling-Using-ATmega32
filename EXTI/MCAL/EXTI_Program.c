@@ -38,9 +38,9 @@ void EXTI_VoidInit(void)
     
     // Enable INT0
 	#if INT0_EN == ENABLE
-		SET_BIT(GICR, 6);
+		SET_BIT(GICR, PIN6);
 	#elif INT0_EN == DISABLE
-		CLR_BIT(GICR, 6);
+		CLR_BIT(GICR, PIN6);
 	#endif
 }
 
