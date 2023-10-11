@@ -10,7 +10,7 @@
 #define EXTI_INTERFACE_H
 
 // Functions prototypes
-void EXTI_VoidInit();
+void EXTI_VoidInit(u8 arr[]);
 void EXTI_VoidEnableGIE(void);
 void EXTI_VoidDisableGIE(void);
 void __vector_1(void) __attribute__((signal));

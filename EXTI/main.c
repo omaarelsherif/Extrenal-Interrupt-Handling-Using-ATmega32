@@ -4,6 +4,7 @@
  */
 
 // Include drivers
+#include "LIB/STD_TYPES.h"
 #include "MCAL/DIO_Config.h"
 #include "MCAL/DIO_Interface.h"
 #include "MCAL/EXTI_Config.h"
@@ -16,7 +17,8 @@ void main(void)
 	EXTI_VoidEnableGIE();
 
 	// Initialize external enterrupt (EXTI)
-	EXTI_VoidInit();
+	u8 interrupts[3] = {0,1,2};		// Array to hold interrupts numbers (INT0)
+	EXTI_VoidInit(interrupts);
 
 	// Set INT0 pin as input and activate internal pull up resistance
 	DIO_VoidSetPinDirection(PORT_D, PIN2, INPUT);

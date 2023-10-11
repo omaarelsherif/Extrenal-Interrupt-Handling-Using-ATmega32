@@ -2,6 +2,8 @@ Archive member included because of file (symbol)
 
 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
                               d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o (exit)
+d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                              ./main.o (__do_copy_data)
 
 Memory Configuration
 
@@ -114,7 +116,7 @@ LOAD d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x558
+.text           0x00000000      0x5d2
  *(.vectors)
  .vectors       0x00000000       0x54 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -152,6 +154,8 @@ LOAD d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr
  *(.init3)
  *(.init3)
  *(.init4)
+ .init4         0x00000060       0x16 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                0x00000060                __do_copy_data
  *(.init4)
  *(.init5)
  *(.init5)
@@ -162,90 +166,92 @@ LOAD d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000060        0x8 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .init9         0x00000076        0x8 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
  *(.init9)
  *(.text)
- .text          0x00000068        0x4 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
-                0x00000068                __vector_12
-                0x00000068                __bad_interrupt
-                0x00000068                __vector_6
-                0x00000068                __vector_11
-                0x00000068                __vector_13
-                0x00000068                __vector_17
-                0x00000068                __vector_19
-                0x00000068                __vector_7
-                0x00000068                __vector_5
-                0x00000068                __vector_4
-                0x00000068                __vector_9
-                0x00000068                __vector_15
-                0x00000068                __vector_8
-                0x00000068                __vector_14
-                0x00000068                __vector_10
-                0x00000068                __vector_16
-                0x00000068                __vector_18
-                0x00000068                __vector_20
- .text          0x0000006c        0x0 ./MCAL/DIO_Program.o
- .text          0x0000006c        0x0 ./MCAL/EXTI_Program.o
- .text          0x0000006c        0x0 ./main.o
- .text          0x0000006c        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x0000006c                . = ALIGN (0x2)
+ .text          0x0000007e        0x4 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+                0x0000007e                __vector_12
+                0x0000007e                __bad_interrupt
+                0x0000007e                __vector_6
+                0x0000007e                __vector_11
+                0x0000007e                __vector_13
+                0x0000007e                __vector_17
+                0x0000007e                __vector_19
+                0x0000007e                __vector_7
+                0x0000007e                __vector_5
+                0x0000007e                __vector_4
+                0x0000007e                __vector_9
+                0x0000007e                __vector_15
+                0x0000007e                __vector_8
+                0x0000007e                __vector_14
+                0x0000007e                __vector_10
+                0x0000007e                __vector_16
+                0x0000007e                __vector_18
+                0x0000007e                __vector_20
+ .text          0x00000082        0x0 ./MCAL/DIO_Program.o
+ .text          0x00000082        0x0 ./MCAL/EXTI_Program.o
+ .text          0x00000082        0x0 ./main.o
+ .text          0x00000082        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text          0x00000082        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                0x00000082                . = ALIGN (0x2)
  *(.text.*)
  .text.DIO_VoidSetPinDirection
-                0x0000006c       0xf6 ./MCAL/DIO_Program.o
-                0x0000006c                DIO_VoidSetPinDirection
+                0x00000082       0xf6 ./MCAL/DIO_Program.o
+                0x00000082                DIO_VoidSetPinDirection
  .text.DIO_VoidSetPinValue
-                0x00000162       0xf6 ./MCAL/DIO_Program.o
-                0x00000162                DIO_VoidSetPinValue
+                0x00000178       0xf6 ./MCAL/DIO_Program.o
+                0x00000178                DIO_VoidSetPinValue
  .text.DIO_U8GetPinValue
-                0x00000258       0x44 ./MCAL/DIO_Program.o
-                0x00000258                DIO_U8GetPinValue
+                0x0000026e       0x44 ./MCAL/DIO_Program.o
+                0x0000026e                DIO_U8GetPinValue
  .text.DIO_VoidTogglePin
-                0x0000029c       0x70 ./MCAL/DIO_Program.o
-                0x0000029c                DIO_VoidTogglePin
+                0x000002b2       0x70 ./MCAL/DIO_Program.o
+                0x000002b2                DIO_VoidTogglePin
  .text.DIO_VoidSetPortValue
-                0x0000030c       0x28 ./MCAL/DIO_Program.o
-                0x0000030c                DIO_VoidSetPortValue
+                0x00000322       0x28 ./MCAL/DIO_Program.o
+                0x00000322                DIO_VoidSetPortValue
  .text.DIO_VoidSetPortDirection
-                0x00000334       0x28 ./MCAL/DIO_Program.o
-                0x00000334                DIO_VoidSetPortDirection
+                0x0000034a       0x28 ./MCAL/DIO_Program.o
+                0x0000034a                DIO_VoidSetPortDirection
  .text.DIO_VoidSetPortHighNibbleDirection
-                0x0000035c       0x62 ./MCAL/DIO_Program.o
-                0x0000035c                DIO_VoidSetPortHighNibbleDirection
+                0x00000372       0x62 ./MCAL/DIO_Program.o
+                0x00000372                DIO_VoidSetPortHighNibbleDirection
  .text.DIO_VoidSetPortLowNibbleDirection
-                0x000003be       0x62 ./MCAL/DIO_Program.o
-                0x000003be                DIO_VoidSetPortLowNibbleDirection
+                0x000003d4       0x62 ./MCAL/DIO_Program.o
+                0x000003d4                DIO_VoidSetPortLowNibbleDirection
  .text.DIO_VoidSetPortHighNibbleValue
-                0x00000420       0x62 ./MCAL/DIO_Program.o
-                0x00000420                DIO_VoidSetPortHighNibbleValue
+                0x00000436       0x62 ./MCAL/DIO_Program.o
+                0x00000436                DIO_VoidSetPortHighNibbleValue
  .text.DIO_VoidSetPortLowNibbleValue
-                0x00000482       0x62 ./MCAL/DIO_Program.o
-                0x00000482                DIO_VoidSetPortLowNibbleValue
+                0x00000498       0x62 ./MCAL/DIO_Program.o
+                0x00000498                DIO_VoidSetPortLowNibbleValue
  .text.EXTI_VoidInit
-                0x000004e4       0x14 ./MCAL/EXTI_Program.o
-                0x000004e4                EXTI_VoidInit
+                0x000004fa       0x56 ./MCAL/EXTI_Program.o
+                0x000004fa                EXTI_VoidInit
  .text.EXTI_VoidEnableGIE
-                0x000004f8        0x8 ./MCAL/EXTI_Program.o
-                0x000004f8                EXTI_VoidEnableGIE
+                0x00000550        0x8 ./MCAL/EXTI_Program.o
+                0x00000550                EXTI_VoidEnableGIE
  .text.EXTI_VoidDisableGIE
-                0x00000500        0x8 ./MCAL/EXTI_Program.o
-                0x00000500                EXTI_VoidDisableGIE
+                0x00000558        0x8 ./MCAL/EXTI_Program.o
+                0x00000558                EXTI_VoidDisableGIE
  .text.__vector_3
-                0x00000508        0xc ./MCAL/EXTI_Program.o
-                0x00000508                __vector_3
+                0x00000560        0xc ./MCAL/EXTI_Program.o
+                0x00000560                __vector_3
  .text.__vector_2
-                0x00000514        0xc ./MCAL/EXTI_Program.o
-                0x00000514                __vector_2
+                0x0000056c        0xc ./MCAL/EXTI_Program.o
+                0x0000056c                __vector_2
  .text.__vector_1
-                0x00000520        0xc ./MCAL/EXTI_Program.o
-                0x00000520                __vector_1
- .text.main     0x0000052c       0x28 ./main.o
-                0x0000052c                main
- .text.libgcc   0x00000554        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00000554                . = ALIGN (0x2)
+                0x00000578        0xc ./MCAL/EXTI_Program.o
+                0x00000578                __vector_1
+ .text.main     0x00000584       0x4a ./main.o
+                0x00000584                main
+ .text.libgcc   0x000005ce        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x000005ce        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                0x000005ce                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000554        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00000554                exit
-                0x00000554                _exit
+ .fini9         0x000005ce        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x000005ce                exit
+                0x000005ce                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -264,11 +270,11 @@ LOAD d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000554        0x4 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x000005ce        0x4 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000558                _etext = .
+                0x000005d2                _etext = .
 
-.data           0x00800060        0x0 load address 0x00000558
+.data           0x00800060        0x4 load address 0x000005d2
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
@@ -276,34 +282,39 @@ LOAD d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr
  .data          0x00800060        0x0 ./MCAL/EXTI_Program.o
  .data          0x00800060        0x0 ./main.o
  .data          0x00800060        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .data          0x00800060        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
  *(.data*)
  *(.rodata)
  *(.rodata*)
+ .rodata.C.0.1238
+                0x00800060        0x3 ./main.o
  *(.gnu.linkonce.d*)
-                0x00800060                . = ALIGN (0x2)
-                0x00800060                _edata = .
-                0x00800060                PROVIDE (__data_end, .)
+                0x00800064                . = ALIGN (0x2)
+ *fill*         0x00800063        0x1 00
+                0x00800064                _edata = .
+                0x00800064                PROVIDE (__data_end, .)
 
-.bss            0x00800060        0x0
-                0x00800060                PROVIDE (__bss_start, .)
+.bss            0x00800064        0x0
+                0x00800064                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x00800060        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
- .bss           0x00800060        0x0 ./MCAL/DIO_Program.o
- .bss           0x00800060        0x0 ./MCAL/EXTI_Program.o
- .bss           0x00800060        0x0 ./main.o
- .bss           0x00800060        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x00800064        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .bss           0x00800064        0x0 ./MCAL/DIO_Program.o
+ .bss           0x00800064        0x0 ./MCAL/EXTI_Program.o
+ .bss           0x00800064        0x0 ./main.o
+ .bss           0x00800064        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x00800064        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
  *(.bss*)
  *(COMMON)
-                0x00800060                PROVIDE (__bss_end, .)
-                0x00000558                __data_load_start = LOADADDR (.data)
-                0x00000558                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800064                PROVIDE (__bss_end, .)
+                0x000005d2                __data_load_start = LOADADDR (.data)
+                0x000005d6                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800060        0x0
-                0x00800060                PROVIDE (__noinit_start, .)
+.noinit         0x00800064        0x0
+                0x00800064                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800060                PROVIDE (__noinit_end, .)
-                0x00800060                _end = .
-                0x00800060                PROVIDE (__heap_start, .)
+                0x00800064                PROVIDE (__noinit_end, .)
+                0x00800064                _end = .
+                0x00800064                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)

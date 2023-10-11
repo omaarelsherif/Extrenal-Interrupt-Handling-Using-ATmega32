@@ -40,13 +40,12 @@
 #define INT0_NUM	0
 #define INT1_NUM	1
 #define INT2_NUM	2
-#define INT_NUM	    INT0_NUM
 
 // Macros to define enable & disable
 #define DISABLE  	0
 #define ENABLE   	1
 #define INT0_EN 	ENABLE
-#define INT1_EN  	DISABLE
-#define INT2_EN  	DISABLE
+#define INT1_EN  	ENABLE
+#define INT2_EN  	ENABLE
 
 #endif

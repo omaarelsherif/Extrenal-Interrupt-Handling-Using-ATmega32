@@ -14,93 +14,94 @@
 #include "EXTI_Config.h"
 
 // Function to initialize the external interrupt
-void EXTI_VoidInit()
+void EXTI_VoidInit(u8 arr[])
 {
-	// Clear interrupts flags
-	//GICR |= (1 << INTF0) | (1 << INTF1) | (1 << INTF2);
-
-	// INT0
-	if(INT_NUM == INT0_NUM && INT0_EN == ENABLE)
+	// Loop over interrupts to be enabled
+	for(u8 i=0; i<=sizeof(arr)/sizeof(arr[0]); i++)
 	{
-		// Switch over ISC mode
-		switch(ISC_MODE)
+		// INT0
+		if(INT0_NUM == arr[i] && INT0_EN == ENABLE)
 		{
-			// Low level
-			case LOW_LEVEL:
-				CLR_BIT(MCUCR, ISC00);
-				CLR_BIT(MCUCR, ISC01);
-				break;
-			// Any logical change
-			case OCH:
-				SET_BIT(MCUCR, ISC00);
-				CLR_BIT(MCUCR, ISC01);
-				break;
-			// Falling edge
-			case FALLING:
-				CLR_BIT(MCUCR, ISC00);
-				SET_BIT(MCUCR, ISC01);
-				break;
-			// Raising edge
-			case RAISING:
-				SET_BIT(MCUCR, ISC00);
-				SET_BIT(MCUCR, ISC01);
-				break;
+			// Switch over ISC mode
+			switch(ISC_MODE)
+			{
+				// Low level
+				case LOW_LEVEL:
+					CLR_BIT(MCUCR, ISC00);
+					CLR_BIT(MCUCR, ISC01);
+					break;
+				// Any logical change
+				case OCH:
+					SET_BIT(MCUCR, ISC00);
+					CLR_BIT(MCUCR, ISC01);
+					break;
+				// Falling edge
+				case FALLING:
+					CLR_BIT(MCUCR, ISC00);
+					SET_BIT(MCUCR, ISC01);
+					break;
+				// Raising edge
+				case RAISING:
+					SET_BIT(MCUCR, ISC00);
+					SET_BIT(MCUCR, ISC01);
+					break;
+			}
+
+			// Enable the interrupt
+			SET_BIT(GICR, INT0);
 		}
 
-		// Enable the interrupt
-		SET_BIT(GICR, INT0);
-	}
-
-	// INT1
-	if(INT_NUM == INT1_NUM && INT1_EN == ENABLE)
-	{
-		// Switch over ISC mode
-		switch(ISC_MODE)
+		// INT1
+		if(INT1_NUM == arr[i] && INT1_EN == ENABLE)
 		{
-			// Low level
-			case LOW_LEVEL:
-				CLR_BIT(MCUCR, ISC10);
-				CLR_BIT(MCUCR, ISC11);
-				break;
-			// Any logical change
-			case OCH:
-				SET_BIT(MCUCR, ISC10);
-				CLR_BIT(MCUCR, ISC11);
-				break;
-			// Falling edge
-			case FALLING:
-				CLR_BIT(MCUCR, ISC10);
-				SET_BIT(MCUCR, ISC11);
-				break;
-			// Raising edge
-			case RAISING:
-				SET_BIT(MCUCR, ISC10);
-				SET_BIT(MCUCR, ISC11);
-				break;
+			// Switch over ISC mode
+			switch(ISC_MODE)
+			{
+				// Low level
+				case LOW_LEVEL:
+					CLR_BIT(MCUCR, ISC10);
+					CLR_BIT(MCUCR, ISC11);
+					break;
+				// Any logical change
+				case OCH:
+					SET_BIT(MCUCR, ISC10);
+					CLR_BIT(MCUCR, ISC11);
+					break;
+				// Falling edge
+				case FALLING:
+					CLR_BIT(MCUCR, ISC10);
+					SET_BIT(MCUCR, ISC11);
+					break;
+				// Raising edge
+				case RAISING:
+					SET_BIT(MCUCR, ISC10);
+					SET_BIT(MCUCR, ISC11);
+					break;
+			}
+
+			// Enable the interrupt
+			SET_BIT(GICR, INT1);
 		}
 
-		// Enable the interrupt
-		SET_BIT(GICR, INT1);
-	}
-
-	// INT2
-	if(INT_NUM == INT2_NUM && INT2_EN == ENABLE)
-	{
-		// Switch over ISC mode
-		switch(ISC_MODE)
+		// INT2
+		if(INT2_NUM == arr[i] && INT2_EN == ENABLE)
 		{
-			// Falling edge
-			case FALLING:
-				CLR_BIT(MCUCSR, ISC2);
-				break;
-			// Raising edge
-			case RAISING:
-				SET_BIT(MCUCSR, ISC2);
-				break;
-		}
+			// Switch over ISC mode
+			switch(ISC_MODE)
+			{
+				// Falling edge
+				case FALLING:
+					CLR_BIT(MCUCSR, ISC2);
+					break;
+				// Raising edge
+				case RAISING:
+					SET_BIT(MCUCSR, ISC2);
+					break;
+			}
 
-		// Enable the interrupt
-		SET_BIT(GICR, INT2);
+			// Enable the interrupt
+			SET_BIT(GICR, INT2);
+		}
 	}
 }
 
