@@ -10,9 +10,11 @@
 #define EXTI_INTERFACE_H
 
 // Functions prototypes
-void EXTI_VoidInit(void);
+void EXTI_VoidInit();
 void EXTI_VoidEnableGIE(void);
 void EXTI_VoidDisableGIE(void);
 void __vector_1(void) __attribute__((signal));
+void __vector_2(void) __attribute__((signal));
+void __vector_3(void) __attribute__((signal));
 
 #endif

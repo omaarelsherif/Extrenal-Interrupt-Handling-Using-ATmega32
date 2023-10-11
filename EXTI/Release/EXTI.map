@@ -114,7 +114,7 @@ LOAD d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x540
+.text           0x00000000      0x558
  *(.vectors)
  .vectors       0x00000000       0x54 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -169,7 +169,6 @@ LOAD d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr
                 0x00000068                __vector_12
                 0x00000068                __bad_interrupt
                 0x00000068                __vector_6
-                0x00000068                __vector_3
                 0x00000068                __vector_11
                 0x00000068                __vector_13
                 0x00000068                __vector_17
@@ -178,7 +177,6 @@ LOAD d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr
                 0x00000068                __vector_5
                 0x00000068                __vector_4
                 0x00000068                __vector_9
-                0x00000068                __vector_2
                 0x00000068                __vector_15
                 0x00000068                __vector_8
                 0x00000068                __vector_14
@@ -231,17 +229,23 @@ LOAD d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr
  .text.EXTI_VoidDisableGIE
                 0x00000500        0x8 ./MCAL/EXTI_Program.o
                 0x00000500                EXTI_VoidDisableGIE
- .text.__vector_1
+ .text.__vector_3
                 0x00000508        0xc ./MCAL/EXTI_Program.o
-                0x00000508                __vector_1
- .text.main     0x00000514       0x28 ./main.o
-                0x00000514                main
- .text.libgcc   0x0000053c        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x0000053c                . = ALIGN (0x2)
+                0x00000508                __vector_3
+ .text.__vector_2
+                0x00000514        0xc ./MCAL/EXTI_Program.o
+                0x00000514                __vector_2
+ .text.__vector_1
+                0x00000520        0xc ./MCAL/EXTI_Program.o
+                0x00000520                __vector_1
+ .text.main     0x0000052c       0x28 ./main.o
+                0x0000052c                main
+ .text.libgcc   0x00000554        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00000554                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000053c        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x0000053c                exit
-                0x0000053c                _exit
+ .fini9         0x00000554        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00000554                exit
+                0x00000554                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -260,11 +264,11 @@ LOAD d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000053c        0x4 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000554        0x4 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000540                _etext = .
+                0x00000558                _etext = .
 
-.data           0x00800060        0x0 load address 0x00000540
+.data           0x00800060        0x0 load address 0x00000558
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
@@ -291,8 +295,8 @@ LOAD d:/career/learning/embedded/imt/avr/workspace/sdk/winavr/bin/../lib/gcc/avr
  *(.bss*)
  *(COMMON)
                 0x00800060                PROVIDE (__bss_end, .)
-                0x00000540                __data_load_start = LOADADDR (.data)
-                0x00000540                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000558                __data_load_start = LOADADDR (.data)
+                0x00000558                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800060        0x0
                 0x00800060                PROVIDE (__noinit_start, .)

@@ -3,16 +3,16 @@ EXTI.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000540  00000000  00000000  00000054  2**1
+  0 .text         00000558  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
-   4:	0c 94 84 02 	jmp	0x508	; 0x508 <__vector_1>
-   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   4:	0c 94 90 02 	jmp	0x520	; 0x520 <__vector_1>
+   8:	0c 94 8a 02 	jmp	0x514	; 0x514 <__vector_2>
+   c:	0c 94 84 02 	jmp	0x508	; 0x508 <__vector_3>
   10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
   14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
   18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
@@ -38,8 +38,8 @@ Disassembly of section .text:
   5a:	d8 e0       	ldi	r29, 0x08	; 8
   5c:	de bf       	out	0x3e, r29	; 62
   5e:	cd bf       	out	0x3d, r28	; 61
-  60:	0e 94 8a 02 	call	0x514	; 0x514 <main>
-  64:	0c 94 9e 02 	jmp	0x53c	; 0x53c <_exit>
+  60:	0e 94 96 02 	call	0x52c	; 0x52c <main>
+  64:	0c 94 aa 02 	jmp	0x554	; 0x554 <_exit>
 
 00000068 <__bad_interrupt>:
   68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -660,32 +660,46 @@ Disassembly of section .text:
  504:	8f bf       	out	0x3f, r24	; 63
  506:	08 95       	ret
 
-00000508 <__vector_1>:
+00000508 <__vector_3>:
  508:	83 e0       	ldi	r24, 0x03	; 3
  50a:	60 e0       	ldi	r22, 0x00	; 0
  50c:	41 e0       	ldi	r20, 0x01	; 1
  50e:	0e 94 b1 00 	call	0x162	; 0x162 <DIO_VoidSetPinValue>
  512:	08 95       	ret
 
-00000514 <main>:
- 514:	0e 94 7c 02 	call	0x4f8	; 0x4f8 <EXTI_VoidEnableGIE>
- 518:	0e 94 72 02 	call	0x4e4	; 0x4e4 <EXTI_VoidInit>
- 51c:	84 e0       	ldi	r24, 0x04	; 4
- 51e:	62 e0       	ldi	r22, 0x02	; 2
- 520:	40 e0       	ldi	r20, 0x00	; 0
- 522:	0e 94 36 00 	call	0x6c	; 0x6c <DIO_VoidSetPinDirection>
- 526:	84 e0       	ldi	r24, 0x04	; 4
- 528:	62 e0       	ldi	r22, 0x02	; 2
- 52a:	41 e0       	ldi	r20, 0x01	; 1
- 52c:	0e 94 b1 00 	call	0x162	; 0x162 <DIO_VoidSetPinValue>
- 530:	83 e0       	ldi	r24, 0x03	; 3
- 532:	60 e0       	ldi	r22, 0x00	; 0
- 534:	4f ef       	ldi	r20, 0xFF	; 255
- 536:	0e 94 36 00 	call	0x6c	; 0x6c <DIO_VoidSetPinDirection>
- 53a:	ff cf       	rjmp	.-2      	; 0x53a <main+0x26>
+00000514 <__vector_2>:
+ 514:	83 e0       	ldi	r24, 0x03	; 3
+ 516:	60 e0       	ldi	r22, 0x00	; 0
+ 518:	41 e0       	ldi	r20, 0x01	; 1
+ 51a:	0e 94 b1 00 	call	0x162	; 0x162 <DIO_VoidSetPinValue>
+ 51e:	08 95       	ret
 
-0000053c <_exit>:
- 53c:	f8 94       	cli
+00000520 <__vector_1>:
+ 520:	83 e0       	ldi	r24, 0x03	; 3
+ 522:	60 e0       	ldi	r22, 0x00	; 0
+ 524:	41 e0       	ldi	r20, 0x01	; 1
+ 526:	0e 94 b1 00 	call	0x162	; 0x162 <DIO_VoidSetPinValue>
+ 52a:	08 95       	ret
 
-0000053e <__stop_program>:
- 53e:	ff cf       	rjmp	.-2      	; 0x53e <__stop_program>
+0000052c <main>:
+ 52c:	0e 94 7c 02 	call	0x4f8	; 0x4f8 <EXTI_VoidEnableGIE>
+ 530:	0e 94 72 02 	call	0x4e4	; 0x4e4 <EXTI_VoidInit>
+ 534:	84 e0       	ldi	r24, 0x04	; 4
+ 536:	62 e0       	ldi	r22, 0x02	; 2
+ 538:	40 e0       	ldi	r20, 0x00	; 0
+ 53a:	0e 94 36 00 	call	0x6c	; 0x6c <DIO_VoidSetPinDirection>
+ 53e:	84 e0       	ldi	r24, 0x04	; 4
+ 540:	62 e0       	ldi	r22, 0x02	; 2
+ 542:	41 e0       	ldi	r20, 0x01	; 1
+ 544:	0e 94 b1 00 	call	0x162	; 0x162 <DIO_VoidSetPinValue>
+ 548:	83 e0       	ldi	r24, 0x03	; 3
+ 54a:	60 e0       	ldi	r22, 0x00	; 0
+ 54c:	4f ef       	ldi	r20, 0xFF	; 255
+ 54e:	0e 94 36 00 	call	0x6c	; 0x6c <DIO_VoidSetPinDirection>
+ 552:	ff cf       	rjmp	.-2      	; 0x552 <main+0x26>
+
+00000554 <_exit>:
+ 554:	f8 94       	cli
+
+00000556 <__stop_program>:
+ 556:	ff cf       	rjmp	.-2      	; 0x556 <__stop_program>

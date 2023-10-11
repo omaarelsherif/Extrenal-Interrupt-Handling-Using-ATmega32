@@ -6,6 +6,7 @@
 // Include drivers
 #include "MCAL/DIO_Config.h"
 #include "MCAL/DIO_Interface.h"
+#include "MCAL/EXTI_Config.h"
 #include "MCAL/EXTI_Interface.h"
 
 // Main function
@@ -17,16 +18,13 @@ void main(void)
 	// Initialize external enterrupt (EXTI)
 	EXTI_VoidInit();
 
-	// Set INT0 pin as input and activate internal pull up resistance for INT0 at portd pin2
+	// Set INT0 pin as input and activate internal pull up resistance
 	DIO_VoidSetPinDirection(PORT_D, PIN2, INPUT);
 	DIO_VoidSetPinValue(PORT_D, PIN2, HIGH);
 
-	// Set DDR fro pin0 of portc as output to target a led
+	// Set direction for portc pin0 as output to target a led
 	DIO_VoidSetPinDirection(PORT_C, PIN0, OUTPUT);
 
 	// Program loop
-	while(1)
-	{
-
-	}
+	while(1){}
 }
