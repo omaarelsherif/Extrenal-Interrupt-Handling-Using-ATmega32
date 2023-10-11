@@ -17,7 +17,7 @@ void main(void)
 	EXTI_VoidEnableGIE();
 
 	// Initialize external enterrupt (EXTI)
-	u8 interrupts[3] = {0,1,2};		// Array to hold interrupts numbers (INT0)
+	u8 interrupts[1] = {0};		   // Array to hold interrupts numbers (INT0)
 	EXTI_VoidInit(interrupts);
 
 	// Set INT0 pin as input and activate internal pull up resistance
